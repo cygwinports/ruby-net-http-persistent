@@ -1,0 +1,20 @@
+inherit rubygem
+
+NAME="ruby-net-http-persistent"
+VERSION=2.9.4
+RELEASE=1
+CATEGORY="Ruby"
+SUMMARY="Ruby Net::HTTP persistent connection support"
+DESCRIPTION="Manages persistent connections using Net::HTTP. Using persistent
+HTTP connections can dramatically increase the speed of HTTP. Creating a new
+HTTP connection for every request involves an extra TCP round-trip and causes
+TCP congestion avoidance negotiation to start over.  Net::HTTP supports
+persistent connections with some API methods but does not handle reconnection
+gracefully. Net::HTTP::Persistent supports reconnection and retry according to
+RFC 2616."
+
+ARCH=noarch
+
+PKG_NAMES="${NAME} ${NAME}-doc"
+ruby_net_http_persistent_CONTENTS=${RUBYGEM_INSTDIR#/}" "${RUBYGEM_SPEC#/}
+ruby_net_http_persistent_doc_CONTENTS=${RUBYGEM_DOCDIR#/}
